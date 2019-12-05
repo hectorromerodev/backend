@@ -15,9 +15,5 @@ module.exports = db.sequelize.define('user', {
 	},
 	password: {
 		type: Sequelize.TEXT
-	},
-	created: {
-		type: Sequelize.DATE,
-		defaultValue: Sequelize.NOW
 	}
 });

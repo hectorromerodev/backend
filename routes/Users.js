@@ -32,7 +32,7 @@ users.post('/register', (req, res) => {
 						let token = jwt.sign(user.dataValues, provess.env.SECRET_KEY, {
 							expiresIn: 1440
 						});
-						res.json({ token: token });
+						res.status(200).json({ token });
 					})
 					.catch(err => {
 						res.send(`Error: ${err}`);
@@ -56,9 +56,9 @@ users.post('/login', (req, res) => {
 				let token = jwt.sign(user.dataValues, process.env.SECRET_KEY, {
 					expiresIn: 1440
 				});
-				Response.json({ token: token });
+				res.status(200).json({ token });
 			} else {
-				res.send('User does not exist');
+				res.send('User or password does not match');
 			}
 		})
 		.catch(err => res.send(`Error: ${err}`));
@@ -76,7 +76,7 @@ users.get('/profile', (req, res) => {
 			}
 		})
 		.then(user => {
-			if (user) res.json(user);
+			if (user) res.status(200).json(user);
 			else res.send('User does not exist');
 		})
 		.catch(err => res.send(`Error: ${err}`));

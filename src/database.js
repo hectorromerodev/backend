@@ -1,10 +1,9 @@
 const Sequelize = require('sequelize');
 const db = {};
 
-const sequelize = new Sequelize('FerreteriaDB', 'root', 'Nutela123', {
+const sequelize = new Sequelize('ferreteriadb', 'root', 'Nutela123', {
 	host: 'localhost',
 	dialect: 'mysql',
-	operatorsAliases: false,
 	pool: {
 		max: 5,
 		min: 0,
