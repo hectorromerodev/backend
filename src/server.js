@@ -11,7 +11,8 @@ const port = process.env.PORT || 4232;
 //Start our app
 const app = express();
 //App middleware settings
-app.use(bodyParser.json());
+app.use(express.json());
+// app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api', users);
 

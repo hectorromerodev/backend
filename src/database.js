@@ -1,9 +1,10 @@
 const Sequelize = require('sequelize');
 const db = {};
 
-const sequelize = new Sequelize('ferreteriadb', 'root', 'Nutela123', {
+const sequelize = new Sequelize('logindb', 'postgres', 'Nutela123', {
 	host: 'localhost',
-	dialect: 'mysql',
+	dialect: 'postgres',
+
 	pool: {
 		max: 5,
 		min: 0,
